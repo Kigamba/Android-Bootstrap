@@ -13,6 +13,7 @@ Run
 ./gradlew clean build :AndroidBootstrap:bintrayUpload -PbintrayUser={userid_bintray} -PbintrayKey={apikey_bintray} -PdryRun=false
 ```
 
+Read [here](https://medium.com/@anitaa_1990/6-easy-steps-to-upload-your-android-library-to-bintray-jcenter-59e6030c8890) for more on this.
   
 Quick Start
 ===========
