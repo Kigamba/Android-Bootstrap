@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: 'push.gradle'
+apply plugin: 'com.novoda.bintray-release'
+
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_INT)
@@ -16,4 +18,26 @@ android {
 dependencies {
     implementation "com.android.support:support-annotations:$supportVersion"
     implementation "com.android.support:support-v4:$supportVersion"
+}
+
+publish {
+
+    def groupProjectID = 'com.beardedhen'
+    def artifactProjectID = 'androidbootstrap'
+    def publishVersionID = '3.0.0'
+
+    userOrg = 'ekigamba'
+    repoName = 'android-bootstrap'
+    groupId = groupProjectID
+    artifactId = artifactProjectID
+    publishVersion = publishVersionID
+    desc = ''
+    website = 'https://github.com/Kigamba/Android-Bootstrap/'
+
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    configurations.implementation.setCanBeResolved(true)
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator)) + configurations.implementation
 }

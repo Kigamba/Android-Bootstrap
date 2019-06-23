@@ -3,6 +3,16 @@ Android-Bootstrap
 Android Bootstrap is an Android library which provides custom views styled according to the
  [Twitter Bootstrap Specification](http://getbootstrap.com/). This allows you to spend more time
   on development rather than trying to get a consistent theme across your app, especially if you are already familiar with the Bootstrap Framework.
+
+How to Upload to My Bintray Account
+===================================
+
+Run
+
+```
+./gradlew clean build :AndroidBootstrap:bintrayUpload -PbintrayUser={userid_bintray} -PbintrayKey={apikey_bintray} -PdryRun=false
+```
+
   
 Quick Start
 ===========
@@ -11,10 +21,21 @@ Quick Start
  <a href="http://www.methodscount.com/?lib=com.beardedhen%3Aandroidbootstrap%3A%2B"><img src="https://img.shields.io/badge/Methods and size-core: 913 | deps: 10417 | 431 KB-e91e63.svg"/></a>
  
  Add the following dependency to your build.gradle, ensuring you replace 'X.X.X' with the latest version on the button above:
+
+ ```java
+ allprojects {
+
+     ...
+     repositories {
+         maven { url "https://dl.bintray.com/ekigamba/android-bootstrap" }
+     }
+ }
+
+ ```
  
  ```java
  dependencies {
-    compile 'com.beardedhen:androidbootstrap:{X.X.X}'
+    compile 'com.beardedhen:androidbootstrap:3.0.0'
  }
  ```
  
